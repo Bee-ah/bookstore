@@ -22,5 +22,5 @@ class OrderFactory(factory.django.DjangoModelFactory):
             for product in extracted:
                 self.product.add(product)  
 
-class Meta:
-    model = Order                     
+    class Meta:
+        model = Order                     
