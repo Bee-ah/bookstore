@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-#l^!a7uty@e*7d&xp^xh-nx)&odjbobto3y-0hc2g#3zh0$b3z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1" , "bookstore-api-class-1f41fbaf31a1.herokuapp.com"]
 
 
 # Application definition
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -56,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "bookstore.urls"
@@ -153,9 +153,9 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-DEBUG = int(os.environ.get("DEBUG", default=0))
+#DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(" ")
+#ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(" ")
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
